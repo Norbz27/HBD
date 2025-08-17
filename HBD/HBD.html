@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Starry Night - Unified Experience</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        html, body {
+            overflow: hidden;
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+        
+        html::-webkit-scrollbar,
+        body::-webkit-scrollbar {
+            display: none;
+        }
+        
+        .section {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100vh;
+            padding: 80px 0;
+            display: none;
+            overflow: hidden;
+        }
+        .section.active {
+            display: block;
+        }
+        .nav-pills .nav-link {
+            color: var(--color-text);
+            background: rgba(255, 255, 255, 0.1);
+            margin: 0 5px;
+            border-radius: 25px;
+            transition: all 0.3s ease;
+        }
+        .nav-pills .nav-link.active {
+            background: var(--color-primary);
+            color: #0c0c2e;
+            box-shadow: 0 0 15px rgba(255, 215, 0, 0.5);
+        }
+        .nav-pills .nav-link:hover {
+            background: rgba(255, 215, 0, 0.2);
+            color: var(--color-primary);
+        }
+        .content-card {
+            background: rgba(0, 0, 0, 0.4);
+            backdrop-filter: blur(15px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 20px;
+            padding: 40px;
+            margin: 20px 0;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+        }
+    </style>
+</head>
+<body>
+    <!-- Moon element -->
+    <div class="moon"></div>
+    
+    <!-- Floating stars -->
+    <div class="stars">
+        <div class="star" style="top: 10%; left: 15%; width: 2px; height: 2px; animation-delay: 0s;"></div>
+        <div class="star" style="top: 20%; left: 80%; width: 1px; height: 1px; animation-delay: 1s;"></div>
+        <div class="star" style="top: 30%; left: 25%; width: 2px; height: 2px; animation-delay: 2s;"></div>
+        <div class="star" style="top: 40%; left: 70%; width: 1px; height: 1px; animation-delay: 3s;"></div>
+        <div class="star" style="top: 50%; left: 10%; width: 2px; height: 2px; animation-delay: 4s;"></div>
+        <div class="star" style="top: 60%; left: 85%; width: 1px; height: 1px; animation-delay: 5s;"></div>
+    </div>
+
+    <!-- Main navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top" style="background: rgba(0, 0, 0, 0.5); backdrop-filter: blur(10px);">
+        <div class="container">
+            <a class="navbar-brand" href="#" style="color: var(--color-primary);">Starry Night</a>
+            <ul class="navbar-nav ms-auto">
+                <li class="nav-item">
+                    <a class="nav-link section-link active" href="#home" style="color: var(--color-text);">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link section-link" href="#about" style="color: var(--color-text);">About</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link section-link" href="#message" style="color: var(--color-text);">Message</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Home Section -->
+    <section id="home" class="section active">
+        <div class="container-fluid" style="min-height: 100vh; position: relative;">
+            <div class="row h-100">
+                <!-- Purple and White Cake on the left side -->
+                <div class="col-md-6 d-flex align-items-end justify-content-start" style="position: relative; height: 100vh;">
+                    <div class="cake-container" style="position: absolute; bottom: 0; left: 0; width: 100%; height: 200px;">
+                        <div class="cake-plate"></div>
+                        <div class="birthday-cake">
+                            <div class="cake-base">
+                                <div class="cake-layer layer-1"></div>
+                                <div class="cake-layer layer-2"></div>
+                                <div class="cake-layer layer-3"></div>
+                                <div class="cake-frosting"></div>
+                                <div class="cake-decoration">
+                                    <div class="candle"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Welcome content on the right side -->
+                <div class="col-md-6 d-flex align-items-center justify-content-center" style="height: 100vh;">
+                    <div class="content-card text-center" style="max-width: 500px;">
+                        <h1 class="mb-4">Welcome to the Starry Night</h1>
+                        <p class="lead mb-4">Experience the magic under the stars</p>
+                        <p class="mb-4">This is your unified experience combining home, about, and message sections into one beautiful starry night theme.</p>
+                        <button class="btn btn-outline-primary" onclick="showSection('about')">Explore More</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="section">
+        <div class="container d-flex align-items-center" style="min-height: 100vh;">
+            <div class="content-card w-100">
+                <h2 class="text-center mb-4">About This Special Night</h2>
+                <div class="row">
+                    <div class="col-md-8 mx-auto">
+                        <p class="mb-3">Under the starry sky, we celebrate something beautiful and meaningful. This unified experience brings together:</p>
+                        <ul class="list-unstyled">
+                            <li class="mb-2">✨ <strong>Stunning Visuals:</strong> Deep night sky with twinkling stars</li>
+                            <li class="mb-2">🌙 <strong>Magical Atmosphere:</strong> Glowing moon and floating particles</li>
+                            <li class="mb-2">🎨 <strong>Beautiful Design:</strong> Golden accents on deep purples</li>
+                            <li class="mb-2">📱 <strong>Responsive Layout:</strong> Works perfectly on all devices</li>
+                        </ul>
+                        <p class="mt-4 text-center">
+                            <button class="btn btn-outline-primary" onclick="showSection('message')">Read the Message</button>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Message Section -->
+    <section id="message" class="section">
+        <div class="container d-flex align-items-center" style="min-height: 100vh;">
+            <div class="content-card w-100">
+                <h2 class="text-center mb-4">Messages Under the Stars</h2>
+                <div class="row">
+                    <div class="col-md-8 mx-auto">
+                        <div class="text-center">
+                            <p class="lead mb-4">Heartfelt words written in starlight</p>
+                            <div class="border-start border-3 border-warning ps-4 mb-4">
+                                <p class="mb-3" style="font-style: italic; font-size: 1.2rem;">
+                                    "In the vastness of this starry night, every twinkle carries a wish, every star holds a memory, and every moment under this cosmic canopy is a celebration of the beautiful journey we're on together."
+                                </p>
+                                <p class="text-muted">- Written under the stars</p>
+                            </div>
+                            <p class="mb-3">This unified experience brings together the warmth of home, the depth of about, and the emotion of message - all under one magical starry sky.</p>
+                            <button class="btn btn-outline-primary" onclick="showSection('home')">Back to Home</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    
+    <!-- Floating particles script -->
+    <script>
+        // Create floating particles
+        function createParticles() {
+            const particlesContainer = document.createElement('div');
+            particlesContainer.className = 'particles';
+            document.body.appendChild(particlesContainer);
+            
+            for (let i = 0; i < 20; i++) {
+                const particle = document.createElement('div');
+                particle.className = 'particle';
+                particle.style.left = Math.random() * 100 + '%';
+                particle.style.width = Math.random() * 3 + 1 + 'px';
+                particle.style.height = particle.style.width;
+                particle.style.animationDelay = Math.random() * 10 + 's';
+                particle.style.animationDuration = (Math.random() * 10 + 10) + 's';
+                particlesContainer.appendChild(particle);
+            }
+        }
+        
+        createParticles();
+
+        // Section navigation
+        function showSection(sectionId) {
+            // Hide all sections
+            document.querySelectorAll('.section').forEach(section => {
+                section.classList.remove('active');
+            });
+            
+            // Show target section
+            document.getElementById(sectionId).classList.add('active');
+            
+            // Update navigation
+            document.querySelectorAll('.nav-link').forEach(link => {
+                link.classList.remove('active');
+            });
+            document.querySelectorAll('.nav-dot').forEach(dot => {
+                dot.classList.remove('active');
+            });
+            
+            // Update active states
+            document.querySelector(`[href="#${sectionId}"]`).classList.add('active');
+            document.querySelector(`[data-section="${sectionId}"]`).classList.add('active');
+        }
+
+        // Add click listeners
+        document.querySelectorAll('.section-link').forEach(link => {
+            link.addEventListener('click', (e) => {
+                e.preventDefault();
+                const sectionId = link.getAttribute('href').substring(1);
+                showSection(sectionId);
+            });
+        });
+
+        document.querySelectorAll('.nav-dot').forEach(dot => {
+            dot.addEventListener('click', () => {
+                const sectionId = dot.getAttribute('data-section');
+                showSection(sectionId);
+            });
+        });
+    </script>
+</body>
+</html>
