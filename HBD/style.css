@@ -5,11 +5,11 @@
 
 :root {
     --color-bg: linear-gradient(135deg, #0c0c2e 0%, #1a1a3e 25%, #2d1b69 50%, #1a1a3e 75%, #0c0c2e 100%);
-    --color-primary: #ffd700;
+    --color-primary: #800080;
     --color-secondary: #87ceeb;
-    --color-accent: #9370db;
+    --color-accent: #9370db;    
     --color-text: #e6e6fa;
-    --color-glow: rgba(255, 215, 0, 0.3);
+    --color-glow: #800080;
 }
 
 /* Base styles */
@@ -459,181 +459,161 @@ body::-webkit-scrollbar {
     to { opacity: 1; }
 }
 
-/* Purple and White Cake Styles */
 .cake-container {
-    position: fixed;
-    bottom: 0;
-    left: 50%;
-    width: 100%;
-    height: 200px;
-    z-index: 1;
-    pointer-events: none;
-}
-
-.birthday-cake {
     position: relative;
+    cursor: pointer;
     animation: cake-bounce 3s ease-in-out infinite;
 }
 
-.cake-base {
+/* Plate - oval shape at bottom */
+.plate {
+    width: 300px;
+    height: 35px;
+    background: linear-gradient(to bottom, #f0f0f0, #d0d0d0);
+    border-radius: 50%;
+    position: relative;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.4);
+    z-index: 1;
+}
+
+
+
+/* Main cake body - with pseudo-element drips */
+.cake-body1 {
     position: absolute;
     bottom: 20px;
     left: 50%;
     transform: translateX(-50%);
+    width: 240px;
+    height: 33.33px;
+    background: linear-gradient(135deg, #800080, #9C27B0);
+    border-radius: 5px;
+    overflow: visible;
+    z-index: 2;
 }
 
-.cake-layer {
+.cake-body2 {
     position: absolute;
-    bottom: 0;
-    border-radius: 15px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
-}
-
-.layer-1 {
-    width: 180px;
-    height: 45px;
-    background: linear-gradient(135deg, #8b5cf6, #a855f7);
-    bottom: 0;
-    border-radius: 20px;
-}
-
-.layer-2 {
-    width: 180px;
-    height: 40px;
-    background: linear-gradient(135deg, #ffffff, #f3f4f6);
-    bottom: 45px;
-    left: 0;
-    border-radius: 18px;
-}
-
-.layer-3 {
-    width: 180px;
-    height: 35px;
-    background: linear-gradient(135deg, #8b5cf6, #a855f7);
-    bottom: 85px;
-    left: 0;
-    border-radius: 15px;
-}
-
-.cake-frosting {
-    position: absolute;
-    bottom: 120px;
-    left: 0;
-    width: 180px;
-    height: 25px;
-    background: linear-gradient(135deg, #ffffff, #f3f4f6);
-    border-radius: 12px;
-    overflow: hidden;
-}
-
-.cake-frosting::before,
-.cake-frosting::after {
-    content: '';
-    position: absolute;
-    background: #ffffff;
-    border-radius: 50%;
-}
-
-.cake-frosting::before {
-    width: 20px;
-    height: 15px;
-    top: -5px;
-    left: 20px;
-}
-
-.cake-frosting::after {
-    width: 15px;
-    height: 12px;
-    top: -3px;
-    right: 30px;
-}
-
-.candle {
-    position: absolute;
-    width: 6px;
-    height: 30px;
-    background: linear-gradient(to top, #8b5cf6, #a855f7);
-    border-radius: 3px;
-    bottom: 145px;
-}
-
-.candle-1 {
-    left: 50px;
-}
-
-.candle-2 {
-    left: 87px;
-}
-
-.candle-3 {
-    left: 124px;
-}
-
-.candle::after {
-    content: '';
-    position: absolute;
-    top: -8px;
+    bottom: 52.66px;
     left: 50%;
     transform: translateX(-50%);
-    width: 8px;
-    height: 8px;
-    background: #ffd700;
-    border-radius: 50%;
-    animation: flicker 1.5s ease-in-out infinite;
+    width: 240px;
+    height: 33.33px;
+        background: linear-gradient(to bottom, #ffffff, #f8f8f8);
+    border-radius: 5px;
+    overflow: visible;
+    z-index: 2;
 }
 
-.frosting-swirl {
+.cake-body3 {
     position: absolute;
-    width: 18px;
-    height: 18px;
-    background: #ffffff;
-    border-radius: 50%;
-    bottom: 120px;
+    bottom: 86px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 240px;
+    height: 34px;
+    background: linear-gradient(135deg, #800080, #9C27B0);
+    border-radius: 5px;
+    overflow: visible;
+    z-index: 2;
 }
 
-.swirl-1 {
-    left: 40px;
-}
-
-.swirl-2 {
-    left: 87px;
-}
-
-.swirl-3 {
-    left: 134px;
-}
-
-.melted-icing {
-    position: absolute;
-    bottom: 115px;
-    left: 0;
-    width: 180px;
-    height: 8px;
-    background: linear-gradient(135deg, #ffffff, #f3f4f6);
-    border-radius: 0 0 15px 15px;
-    opacity: 0.8;
-}
-
-.melted-icing::before,
-.melted-icing::after {
+.cake-body1::before {
     content: '';
     position: absolute;
-    background: #ffffff;
-    border-radius: 50%;
+    width: 20px;
+    height: 40px;
+    background: linear-gradient(135deg, #ffffff, #f3f4f6);
+    left: 50px;
+    top: 0px;
+    border-radius: 0 0 10px 10px;
+    z-index: 10;
 }
 
-.melted-icing::before {
-    width: 12px;
-    height: 12px;
-    bottom: -2px;
-    left: 30px;
+.cake-body1::after {
+    content: '';
+    position: absolute;
+    width: 15px;
+    height: 30px;
+    background: linear-gradient(135deg, #ffffff, #f3f4f6);
+    right: 60px;
+    top: 0px;
+    border-radius: 0 0 8px 8px;
+    z-index: 10;
 }
 
-.melted-icing::after {
-    width: 10px;
-    height: 10px;
-    bottom: -1px;
-    right: 35px;
+.cake-body3::before {
+    content: '';
+    position: absolute;
+    width: 25px;
+    height: 25px;
+    background: linear-gradient(135deg, #ffffff, #f3f4f6);
+    left: 40px;
+    top: 0px;
+    border-radius: 0 0 20px 20px;
+    z-index: 10;
+}
+
+.cake-body3::after {
+    content: '';
+    position: absolute;
+    width: 20px;
+    height: 30px;
+    background: linear-gradient(135deg, #ffffff, #f3f4f6);
+    right: 20px;
+    top: 0px;
+    border-radius: 0 0 8px 8px;
+    z-index: 10;
+}
+
+/* White frosting on top - much thicker and more prominent */
+.frosting-top {
+    position: absolute;
+    bottom: 120px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 260px;
+    height: 45px;
+    background: linear-gradient(to bottom, #ffffff, #f8f8f8);
+    border-radius: 130px 130px 15px 15px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+}
+
+/* Remove the old cake-drip CSS entirely */
+
+/* Candle - thicker and more prominent */
+.candle {
+    position: absolute;
+    bottom: 165px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 18px;
+    height: 50px;
+    background: linear-gradient(to right, #cc0000, #990000);
+    border-radius: 3px;
+    box-shadow: 2px 0 5px rgba(0,0,0,0.3);
+}
+
+/* Flame - more oval and prominent */
+.flame {
+    position: absolute;
+    bottom: 215px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 20px;
+    height: 25px;
+    background: radial-gradient(ellipse at center bottom, #ffdd00 20%, #ff8800 50%, #ff4400 80%);
+    border-radius: 50% 50% 50% 50% / 60% 60% 40% 40%;
+    animation: flicker 0.8s ease-in-out infinite alternate;
+}
+
+@keyframes flicker {
+    0% {
+        transform: translateX(-50%) rotate(-1deg) scale(0.95);
+    }
+    100% {
+        transform: translateX(-50%) rotate(1deg) scale(1.05);
+    }
 }
 
 @keyframes cake-bounce {
@@ -654,4 +634,297 @@ body::-webkit-scrollbar {
         opacity: 0.7;
         transform: translateX(-50%) scale(0.9);
     }
+}
+
+/* Picture Gallery Styles for About Page */
+.picture-gallery {
+    padding: 80px 20px;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.gallery-container {
+    max-width: 1200px;
+    width: 100%;
+    margin: 0 auto;
+}
+
+.gallery-item.main-image {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.gallery-item img {
+    border-radius: 15px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+    transition: all 0.3s ease;
+}
+
+.gallery-item img:hover {
+    transform: scale(1.02);
+    box-shadow: 0 12px 48px rgba(255, 215, 0, 0.2);
+}
+
+.image-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+    margin: 2rem 0;
+}
+
+.grid-item {
+    position: relative;
+    overflow: hidden;
+    border-radius: 15px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s ease;
+}
+
+.grid-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 32px rgba(255, 215, 0, 0.3);
+}
+
+.grid-item img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    transition: all 0.3s ease;
+}
+
+.grid-item:hover img {
+    transform: scale(1.05);
+}
+
+/* Floating decorative elements */
+.floating-elements {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: -1;
+}
+
+.floating-star {
+    position: absolute;
+    width: 4px;
+    height: 4px;
+    background: var(--color-primary);
+    border-radius: 50%;
+    animation: float-stars 8s infinite ease-in-out;
+}
+
+.star-1 {
+    top: 20%;
+    left: 10%;
+    animation-delay: 0s;
+}
+
+.star-2 {
+    top: 60%;
+    right: 15%;
+    animation-delay: 2s;
+}
+
+.star-3 {
+    bottom: 30%;
+    left: 20%;
+    animation-delay: 4s;
+}
+
+@keyframes float-stars {
+    0%, 100% {
+        transform: translateY(0) scale(1);
+        opacity: 0.7;
+    }
+    50% {
+        transform: translateY(-20px) scale(1.2);
+        opacity: 1;
+    }
+}
+
+/* Gallery navigation */
+.gallery-nav {
+    margin-top: 2rem;
+}
+
+.gallery-nav .btn {
+    padding: 0.5rem;
+    border-radius: 50%;
+    width: 60px;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.nav-icon {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+/* Responsive adjustments for picture gallery */
+@media (max-width: 768px) {
+    .picture-gallery {
+        padding: 100px 15px 60px;
+    }
+    
+    .image-grid {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+    
+    .gallery-item.main-image img {
+        max-width: 100%;
+        height: auto;
+    }
+}
+
+@media (max-width: 480px) {
+    .image-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .grid-item img {
+        height: 150px;
+    }
+}
+
+/* Transparent slideshow styles */
+.slideshow-container {
+    position: relative;
+    overflow: hidden;
+    border-radius: 15px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+    background: transparent;
+}
+
+.slideshow-wrapper {
+    position: relative;
+    width: 100%;
+    height: 400px;
+    background: transparent;
+}
+
+.slide {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+    background: transparent;
+}
+
+.slide.active {
+    opacity: 1;
+}
+
+@media (max-width: 768px) {
+    .slideshow-wrapper {
+        height: 300px;
+    }
+}
+
+/* Section transition animations */
+.section {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    padding: 80px 0;
+    display: none;
+    overflow: hidden;
+    opacity: 0;
+    transform: translateX(100%);
+    transition: all 0.6s ease-in-out;
+}
+
+.section.active {
+    display: block;
+    opacity: 1;
+    transform: translateX(0);
+}
+
+.section.slide-out-left {
+    transform: translateX(-100%);
+    opacity: 0;
+}
+
+.section.slide-in-right {
+    transform: translateX(100%);
+    opacity: 0;
+}
+
+.section.slide-in-left {
+    transform: translateX(-100%);
+    opacity: 0;
+}
+
+/* Fade transition variant */
+.section.fade {
+    transform: translateX(0);
+    transition: opacity 0.5s ease-in-out;
+}
+
+.section.fade.active {
+    opacity: 1;
+}
+
+/* Scale transition variant */
+.section.scale {
+    transform: scale(0.9) translateX(0);
+    transition: all 0.5s ease-in-out;
+}
+
+.section.scale.active {
+    transform: scale(1);
+    opacity: 1;
+}
+
+/* Navigation button animations */
+.btn {
+    transition: all 0.3s ease;
+}
+
+.btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 15px rgba(255, 215, 0, 0.3);
+}
+
+/* Floating animation for decorative elements */
+@keyframes float-up {
+    0% {
+        transform: translateY(100vh) scale(0);
+        opacity: 0;
+    }
+    100% {
+        transform: translateY(0) scale(1);
+        opacity: 1;
+    }
+}
+
+.section.active .floating-star {
+    animation: float-up 1s ease-out forwards;
+}
+
+.section.active .floating-star:nth-child(1) {
+    animation-delay: 0.2s;
+}
+
+.section.active .floating-star:nth-child(2) {
+    animation-delay: 0.4s;
+}
+
+.section.active .floating-star:nth-child(3) {
+    animation-delay: 0.6s;
 }

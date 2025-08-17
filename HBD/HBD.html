@@ -74,7 +74,7 @@
     </div>
 
     <!-- Main navigation -->
-    <nav class="navbar navbar-expand-lg navbar-dark fixed-top" style="background: rgba(0, 0, 0, 0.5); backdrop-filter: blur(10px);">
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
         <div class="container">
             <a class="navbar-brand" href="#" style="color: var(--color-primary);">Starry Night</a>
             <ul class="navbar-nav ms-auto">
@@ -96,21 +96,35 @@
         <div class="container-fluid" style="min-height: 100vh; position: relative;">
             <div class="row h-100">
                 <!-- Purple and White Cake on the left side -->
-                <div class="col-md-6 d-flex align-items-end justify-content-start" style="position: relative; height: 100vh;">
-                    <div class="cake-container" style="position: absolute; bottom: 0; left: 0; width: 100%; height: 200px;">
-                        <div class="cake-plate"></div>
-                        <div class="birthday-cake">
-                            <div class="cake-base">
-                                <div class="cake-layer layer-1"></div>
-                                <div class="cake-layer layer-2"></div>
-                                <div class="cake-layer layer-3"></div>
-                                <div class="cake-frosting"></div>
-                                <div class="cake-decoration">
-                                    <div class="candle"></div>
-                                </div>
-                            </div>
-                        </div>
+                <div class="col-md-6 d-flex align-items-center justify-content-center mt-5" style="position: relative; height: 100vh;">
+                    <div class="cake-container" id="cakeContainer">
+                        <div class="flame" id="flame"></div>
+                        <div class="candle"></div>
+                        
+                        <div class="frosting-top"></div>
+                        
+
+                        <div class="cake-body1"></div>
+                        <div class="cake-body2"></div>
+                        <div class="cake-body3"></div>
+                        
+                        <div class="plate"></div>
                     </div>
+
+                    <script>
+                        const cakeContainer = document.getElementById('cakeContainer');
+                        const flame = document.getElementById('flame');
+                        
+                        cakeContainer.addEventListener('click', function() {
+                            flame.style.animation = 'none';
+                            flame.style.opacity = '0';
+                            
+                            setTimeout(() => {
+                                flame.style.animation = 'flicker 0.8s ease-in-out infinite alternate';
+                                flame.style.opacity = '1';
+                            }, 2000);
+                        });
+                    </script>
                 </div>
                 
                 <!-- Welcome content on the right side -->
@@ -126,23 +140,47 @@
         </div>
     </section>
 
-    <!-- About Section -->
+    <!-- About Section - Picture Only (Single Unsplash Placeholder) -->
     <section id="about" class="section">
-        <div class="container d-flex align-items-center" style="min-height: 100vh;">
-            <div class="content-card w-100">
-                <h2 class="text-center mb-4">About This Special Night</h2>
-                <div class="row">
-                    <div class="col-md-8 mx-auto">
-                        <p class="mb-3">Under the starry sky, we celebrate something beautiful and meaningful. This unified experience brings together:</p>
-                        <ul class="list-unstyled">
-                            <li class="mb-2">✨ <strong>Stunning Visuals:</strong> Deep night sky with twinkling stars</li>
-                            <li class="mb-2">🌙 <strong>Magical Atmosphere:</strong> Glowing moon and floating particles</li>
-                            <li class="mb-2">🎨 <strong>Beautiful Design:</strong> Golden accents on deep purples</li>
-                            <li class="mb-2">📱 <strong>Responsive Layout:</strong> Works perfectly on all devices</li>
-                        </ul>
-                        <p class="mt-4 text-center">
-                            <button class="btn btn-outline-primary" onclick="showSection('message')">Read the Message</button>
-                        </p>
+        <div class="container-fluid d-flex align-items-center" style="min-height: 100vh; padding: 0;">
+            <div class="picture-gallery w-100">
+                <div class="gallery-container">
+                    <!-- Main title image -->
+                    <div class="gallery-item main-image">
+                        <img src="https://images.unsplash.com/photo-1516339901601-2e1b62dc0c45?w=800&h=400&fit=crop" 
+                             alt="About page main image" 
+                             class="img-fluid rounded">
+                    </div>
+                    
+                    <!-- Image grid with same placeholder -->
+                    <div class="image-grid">
+                        <div class="grid-item">
+                            <img src="https://images.unsplash.com/photo-1516339901601-2e1b62dc0c45?w=400&h=300&fit=crop" 
+                                 alt="Placeholder image 1" 
+                                 class="img-fluid rounded">
+                        </div>
+                        <div class="grid-item">
+                            <img src="https://images.unsplash.com/photo-1516339901601-2e1b62dc0c45?w=400&h=300&fit=crop" 
+                                 alt="Placeholder image 2" 
+                                 class="img-fluid rounded">
+                        </div>
+                        <div class="grid-item">
+                            <img src="https://images.unsplash.com/photo-1516339901601-2e1b62dc0c45?w=400&h=300&fit=crop" 
+                                 alt="Placeholder image 3" 
+                                 class="img-fluid rounded">
+                        </div>
+                        <div class="grid-item">
+                            <img src="https://images.unsplash.com/photo-1516339901601-2e1b62dc0c45?w=400&h=300&fit=crop" 
+                                 alt="Placeholder image 4" 
+                                 class="img-fluid rounded">
+                        </div>
+                    </div>
+                    
+                    <!-- Decorative elements -->
+                    <div class="floating-elements">
+                        <div class="floating-star star-1"></div>
+                        <div class="floating-star star-2"></div>
+                        <div class="floating-star star-3"></div>
                     </div>
                 </div>
             </div>
@@ -198,15 +236,42 @@
         
         createParticles();
 
-        // Section navigation
+        // Section navigation with smooth pop animations
         function showSection(sectionId) {
-            // Hide all sections
-            document.querySelectorAll('.section').forEach(section => {
-                section.classList.remove('active');
+            const sections = document.querySelectorAll('.section');
+            const currentActive = document.querySelector('.section.active');
+            const targetSection = document.getElementById(sectionId);
+            
+            if (currentActive === targetSection) return;
+            
+            // Add animation classes
+            sections.forEach(section => {
+                section.style.transition = 'all 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55)';
             });
             
-            // Show target section
-            document.getElementById(sectionId).classList.add('active');
+            // Hide current section with pop-out effect
+            if (currentActive) {
+                currentActive.style.transform = 'scale(0.8) translateY(50px)';
+                currentActive.style.opacity = '0';
+                
+                setTimeout(() => {
+                    currentActive.classList.remove('active');
+                    currentActive.style.transform = '';
+                    currentActive.style.opacity = '';
+                }, 300);
+            }
+            
+            // Show target section with pop-in effect
+            setTimeout(() => {
+                targetSection.classList.add('active');
+                targetSection.style.transform = 'scale(0.8) translateY(50px)';
+                targetSection.style.opacity = '0';
+                
+                setTimeout(() => {
+                    targetSection.style.transform = 'scale(1) translateY(0)';
+                    targetSection.style.opacity = '1';
+                }, 50);
+            }, 350);
             
             // Update navigation
             document.querySelectorAll('.nav-link').forEach(link => {
@@ -218,10 +283,10 @@
             
             // Update active states
             document.querySelector(`[href="#${sectionId}"]`).classList.add('active');
-            document.querySelector(`[data-section="${sectionId}"]`).classList.add('active');
+            document.querySelector(`[data-section="${sectionId}"]`)?.classList.add('active');
         }
 
-        // Add click listeners
+        // Add click listeners with smooth animations
         document.querySelectorAll('.section-link').forEach(link => {
             link.addEventListener('click', (e) => {
                 e.preventDefault();
@@ -236,6 +301,26 @@
                 showSection(sectionId);
             });
         });
+
+        // Auto-slideshow functionality
+        let currentSlide = 0;
+        const slides = document.querySelectorAll('.slide');
+        const totalSlides = slides.length;
+
+        function showSlide(index) {
+            slides.forEach(slide => slide.classList.remove('active'));
+            slides[index].classList.add('active');
+        }
+
+        function nextSlide() {
+            currentSlide = (currentSlide + 1) % totalSlides;
+            showSlide(currentSlide);
+        }
+
+        // Start auto-slideshow
+        if (slides.length > 0) {
+            setInterval(nextSlide, 3000);
+        }
     </script>
 </body>
 </html>
