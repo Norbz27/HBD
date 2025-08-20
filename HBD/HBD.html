@@ -418,12 +418,12 @@
                 if (charIndex <= sentence.length) {
                     messageElem.textContent = sentence.slice(0, charIndex);
                     charIndex++;
-                    setTimeout(typeChar, 55); // Slow typing
+                    setTimeout(typeChar, 55);
                 } else {
                     setTimeout(() => {
-                        messageElem.textContent = ""; // Remove sentence after pause
-                        setTimeout(callback, 600); // Pause before next sentence
-                    }, 3000); // Show full sentence for 1.8s
+                        messageElem.textContent = ""; 
+                        setTimeout(callback, 600); 
+                    }, 3000); 
                 }
             }
             typeChar();
@@ -435,13 +435,11 @@
                     showNextSentence();
                 });
             } else {
-                // After last sentence, show the flower
                 showFlower();
             }
         }
 
         function showFlower() {
-            // Create an iframe to embed the flower animation
             const flowerFrame = document.createElement('iframe');
             flowerFrame.src = 'flower.html';
             flowerFrame.style.width = '220px';
@@ -449,27 +447,22 @@
             flowerFrame.style.border = 'none';
             flowerFrame.style.display = 'block';
             flowerFrame.style.margin = '0px auto 150px auto';
-            flowerFrame.style.transform = 'scale(2.2)'; // Zoom in // Keep zoom centered
+            flowerFrame.style.transform = 'scale(2.2)';
             flowerFrame.setAttribute('title', 'Blooming Tulip');
-            // Insert after the messageTyping element
             messageElem.parentNode.insertBefore(flowerFrame, messageElem.nextSibling);
         }
 
         function startMessageTyping() {
             sentenceIndex = 0;
-            setTimeout(showNextSentence, 2000); // Wait 2 seconds before starting
+            setTimeout(showNextSentence, 2000);
         }
     </script>
-    <!-- Background music -->
     <audio id="bgMusic" src="Music/videoplayback.m4a" loop autoplay style="display:none"></audio>
     <script>
-        // Play music on load
         window.addEventListener('DOMContentLoaded', function() {
             const music = document.getElementById('bgMusic');
-            // Try to play (some browsers require user interaction)
             music.volume = 0.5;
             music.play().catch(() => {
-                // If autoplay fails, play after first user interaction
                 document.body.addEventListener('click', function playOnce() {
                     music.play();
                     document.body.removeEventListener('click', playOnce);

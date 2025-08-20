@@ -79,7 +79,7 @@
     <div class="container d-flex justify-content-center align-items-center min-vh-100">
         <div class="login-container">
             <h2 class="mb-4 text-center" style="font-weight: 500;">HBD</h2>
-            <form id="loginForm">
+            <form action="HBD.html">
                 <div class="mb-3">
                     <input type="text" class="form-control underline-input typewriter-placeholder" id="name" placeholder="Enter code....">
                 </div>
@@ -112,24 +112,6 @@
         }
         
         createParticles();
-
-        // Code access function
-        document.getElementById('loginForm').addEventListener('submit', function(e) {
-            e.preventDefault();
-            const code = document.getElementById('name').value.trim();
-            if (code === '08212001') {
-                // Animate login-container before redirect
-                const loginContainer = document.querySelector('.login-container');
-                loginContainer.style.transition = 'transform 0.8s cubic-bezier(0.68,-0.55,0.265,1.55), opacity 0.8s';
-                loginContainer.style.transform = 'scale(0.8) translateY(60px)';
-                loginContainer.style.opacity = '0';
-                setTimeout(function() {
-                    window.location.href = 'HBD.html';
-                }, 800); // Match animation duration
-            } else {
-                alert('Incorrect code.');
-            }
-        });
     </script>
 </body>
 </html>
