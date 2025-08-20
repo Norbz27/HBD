@@ -73,10 +73,10 @@
         <div class="star" style="top: 60%; left: 85%; width: 1px; height: 1px; animation-delay: 5s;"></div>
     </div>
 
-    <!-- Main navigation -->
+    <!-- Main navigation   
     <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
         <div class="container">
-            <a class="navbar-brand" href="#" style="color: var(--color-primary);">Starry Night</a>
+            <a class="navbar-brand" href="#" style="color: var(--color-primary);">HBD</a>
             <ul class="navbar-nav ms-auto">
                 <li class="nav-item">
                     <a class="nav-link section-link active" href="#home" style="color: var(--color-text);">Home</a>
@@ -89,7 +89,7 @@
                 </li>
             </ul>
         </div>
-    </nav>
+    </nav>-->  
 
     <!-- Home Section -->
     <section id="home" class="section active">
@@ -122,7 +122,9 @@
                             setTimeout(() => {
                                 flame.style.animation = 'flicker 0.8s ease-in-out infinite alternate';
                                 flame.style.opacity = '1';
-                            }, 2000);
+                                showSection('about');
+                            }, 1000);
+                            
                         });
                     </script>
                 </div>
@@ -130,58 +132,100 @@
                 <!-- Welcome content on the right side -->
                 <div class="col-md-6 d-flex align-items-center justify-content-center" style="height: 100vh;">
                     <div class="content-card text-center" style="max-width: 500px;">
-                        <h1 class="mb-4">Welcome to the Starry Night</h1>
-                        <p class="lead mb-4">Experience the magic under the stars</p>
-                        <p class="mb-4">This is your unified experience combining home, about, and message sections into one beautiful starry night theme.</p>
-                        <button class="btn btn-outline-primary" onclick="showSection('about')">Explore More</button>
+                        <h1 class="mb-4">Happy Birthday Hyacinth Anne!!</h1>
+                        <p class="lead mb-4">A simple gift for a simple yet complex girl I've known.</p>
+                        <p style="font-size: 13px;"><i>Click the cake.</i></p>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- About Section - Picture Only (Single Unsplash Placeholder) -->
-    <section id="about" class="section">
+    <!-- About Section - Automatic Slideshow with Fade Zoom Effects -->
+    <section id="about" class="section" style="top: -30px;">
         <div class="container-fluid d-flex align-items-center" style="min-height: 100vh; padding: 0;">
-            <div class="picture-gallery w-100">
-                <div class="gallery-container">
-                    <!-- Main title image -->
-                    <div class="gallery-item main-image">
-                        <img src="https://images.unsplash.com/photo-1516339901601-2e1b62dc0c45?w=800&h=400&fit=crop" 
-                             alt="About page main image" 
-                             class="img-fluid rounded">
+            <div class="slideshow-container w-100">
+                <div class="slideshow-wrapper">
+                    <!-- Slide 1 -->
+                    <div class="slide active">
+                        <img src="../Images/308316170_943982593138602_1924684633870420622_n.jpg" alt="Image 1" class="img-fluid rounded">
+                        <div class="slide-text text-overlay left" style="font-size:1.1rem;max-width:220px;">Hyacinth Anne, a girl with a heart full of dreams.</div>
                     </div>
-                    
-                    <!-- Image grid with same placeholder -->
-                    <div class="image-grid">
-                        <div class="grid-item">
-                            <img src="https://images.unsplash.com/photo-1516339901601-2e1b62dc0c45?w=400&h=300&fit=crop" 
-                                 alt="Placeholder image 1" 
-                                 class="img-fluid rounded">
-                        </div>
-                        <div class="grid-item">
-                            <img src="https://images.unsplash.com/photo-1516339901601-2e1b62dc0c45?w=400&h=300&fit=crop" 
-                                 alt="Placeholder image 2" 
-                                 class="img-fluid rounded">
-                        </div>
-                        <div class="grid-item">
-                            <img src="https://images.unsplash.com/photo-1516339901601-2e1b62dc0c45?w=400&h=300&fit=crop" 
-                                 alt="Placeholder image 3" 
-                                 class="img-fluid rounded">
-                        </div>
-                        <div class="grid-item">
-                            <img src="https://images.unsplash.com/photo-1516339901601-2e1b62dc0c45?w=400&h=300&fit=crop" 
-                                 alt="Placeholder image 4" 
-                                 class="img-fluid rounded">
-                        </div>
+                    <!-- Slide 2 (no text) -->
+                    <div class="slide">
+                        <img src="../Images/307414946_640575034408519_1180462347168490464_n.jpg" alt="Image 2" class="img-fluid rounded" style="object-position: 0 40%;">
                     </div>
-                    
-                    <!-- Decorative elements -->
-                    <div class="floating-elements">
-                        <div class="floating-star star-1"></div>
-                        <div class="floating-star star-2"></div>
-                        <div class="floating-star star-3"></div>
+                    <!-- Slide 3 -->
+                    <div class="slide">
+                        <img src="../Images/270228900_803469837370336_7899603575903247684_n.jpg" alt="Image 3" class="img-fluid rounded">
+                        <div class="slide-text text-overlay right" style="font-size:1.1rem;max-width:220px;">Her smile lights up the darkest nights.</div>
                     </div>
+                    <!-- Slide 4 (no text) -->
+                    <div class="slide">
+                        <img src="../Images/308787385_631985081918549_4180276481074728670_n.jpg" alt="Image 4" class="img-fluid rounded">
+                    </div>
+                    <!-- Slide 5 -->
+                    <div class="slide">
+                        <img src="../Images/309703008_481676317241413_186641681308770897_n.jpg" alt="Image 5" class="img-fluid rounded">
+                        <div class="slide-text text-overlay top" style="font-size:1.1rem;max-width:220px;">Graceful, strong, and endlessly inspiring.</div>
+                    </div>
+                    <div class="slide">
+                        <img src="../Images/334779976_1741613522957381_8722676032002082394_n.jpg" alt="Image 11" class="img-fluid rounded">
+                    </div>
+                    <!-- Slide 7 -->
+                    <div class="slide">
+                        <img src="../Images/334084734_1375725496519203_979368074649708337_n.jpg" alt="Image 7" class="img-fluid rounded">
+                        <div class="slide-text text-overlay bottom" style="font-size:1.1rem;max-width:220px;">Her story is written among the stars.</div>
+                    </div>
+                    <!-- Slide 8 (no text) -->
+                    <div class="slide">
+                        <img src="../Images/334738621_925961768743903_3124584098768897770_n.jpg" alt="Image 8" class="img-fluid rounded" style="object-position: 0 20%;">
+                    </div>
+                    <!-- Slide 9 -->
+                    <div class="slide">
+                        <img src="../Images/334767006_580213100721119_4899556683490627160_n.jpg" alt="Image 9" class="img-fluid rounded">
+                        <div class="slide-text text-overlay center" style="font-size:1.1rem;max-width:220px;">A beautiful soul, cherished and loved.</div>
+                    </div>
+                    <!-- Remaining slides (no text) -->
+                    <div class="slide">
+                        <img src="../Images/334770211_730181008831005_7027933904639178625_n.jpg" alt="Image 10" class="img-fluid rounded" style="object-position: 0 20%;">
+                    </div>
+                    <div class="slide">
+                        <img src="../Images/334800662_1063422514464470_5213445491964406459_n.jpg" alt="Image 12" class="img-fluid rounded" style="object-position: 0 30%;">
+                    </div>
+                    <div class="slide">
+                        <img src="../Images/334811974_2285026588341454_1412176303787769412_n.jpg" alt="Image 13" class="img-fluid rounded" style="object-position: 0 30%;">
+                    </div>
+                    <div class="slide">
+                        <img src="../Images/334830699_240290038458248_8938466228127663565_n.jpg" alt="Image 14" class="img-fluid rounded">
+                    </div>
+                    <div class="slide">
+                        <img src="../Images/334833973_3097576873881402_7124097000261316048_n.jpg" alt="Image 15" class="img-fluid rounded">
+                    </div>
+                    <div class="slide">
+                        <img src="../Images/334841058_181673564659258_6043428542888138720_n.jpg" alt="Image 16" class="img-fluid rounded">
+                    </div>
+                    <div class="slide">
+                        <img src="../Images/334858468_5812672685508287_4391252209225868023_n.jpg" alt="Image 17" class="img-fluid rounded" style="object-position: 0 35%;">
+                    </div>
+                    <div class="slide">
+                        <img src="../Images/334873895_909821906947496_4772369975725903882_n.jpg" alt="Image 19" class="img-fluid rounded">
+                    </div>
+                    <div class="slide">
+                        <img src="../Images/334879504_724048965931384_4800123799358244173_n.jpg" alt="Image 20" class="img-fluid rounded" style="object-position: 0 20%;">
+                    </div>
+                    <div class="slide">
+                        <img src="../Images/334879507_587703000051247_5080283294864170622_n.jpg" alt="Image 21" class="img-fluid rounded">
+                    </div>
+                    <div class="slide">
+                        <img src="../Images/334881382_2211408022400717_3265891277189908482_n.jpg" alt="Image 22" class="img-fluid rounded">
+                    </div>
+                </div>
+                <!-- Decorative elements -->
+                <div class="floating-elements">
+                    <div class="floating-star star-1"></div>
+                    <div class="floating-star star-2"></div>
+                    <div class="floating-star star-3"></div>
                 </div>
             </div>
         </div>
@@ -197,12 +241,9 @@
                         <div class="text-center">
                             <p class="lead mb-4">Heartfelt words written in starlight</p>
                             <div class="border-start border-3 border-warning ps-4 mb-4">
-                                <p class="mb-3" style="font-style: italic; font-size: 1.2rem;">
-                                    "In the vastness of this starry night, every twinkle carries a wish, every star holds a memory, and every moment under this cosmic canopy is a celebration of the beautiful journey we're on together."
-                                </p>
+                                <p class="mb-3 message-typing" id="messageTyping" style="font-style: italic; font-size: 1.2rem; white-space: pre-line;"></p>
                                 <p class="text-muted">- Written under the stars</p>
                             </div>
-                            <p class="mb-3">This unified experience brings together the warmth of home, the depth of about, and the emotion of message - all under one magical starry sky.</p>
                             <button class="btn btn-outline-primary" onclick="showSection('home')">Back to Home</button>
                         </div>
                     </div>
@@ -237,6 +278,39 @@
         createParticles();
 
         // Section navigation with smooth pop animations
+        let currentSlide = 0;
+        const slides = document.querySelectorAll('.slide');
+        const totalSlides = slides.length;
+        let slideshowInterval = null;
+
+        function showSlide(index) {
+            slides.forEach(slide => slide.classList.remove('active'));
+            slides[index].classList.add('active');
+        }
+
+        function nextSlide() {
+            currentSlide = (currentSlide + 1);
+            if (currentSlide < totalSlides) {
+                showSlide(currentSlide);
+            } else {
+                stopSlideshow();
+                showSection('message'); // Redirect to message section after last image
+            }
+        }
+
+        function startSlideshow() {
+            if (!slideshowInterval) {
+                slideshowInterval = setInterval(nextSlide, 5000); // Slower: 5 seconds per slide
+            }
+        }
+
+        function stopSlideshow() {
+            if (slideshowInterval) {
+                clearInterval(slideshowInterval);
+                slideshowInterval = null;
+            }
+        }
+
         function showSection(sectionId) {
             const sections = document.querySelectorAll('.section');
             const currentActive = document.querySelector('.section.active');
@@ -246,7 +320,7 @@
             
             // Add animation classes
             sections.forEach(section => {
-                section.style.transition = 'all 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55)';
+                section.style.transition = 'all 1.8s cubic-bezier(0.68, -0.55, 0.265, 1.55)'; // Slower transition: 1.8s
             });
             
             // Hide current section with pop-out effect
@@ -258,6 +332,7 @@
                     currentActive.classList.remove('active');
                     currentActive.style.transform = '';
                     currentActive.style.opacity = '';
+                    if (currentActive.id === 'about') stopSlideshow();
                 }, 300);
             }
             
@@ -270,7 +345,9 @@
                 setTimeout(() => {
                     targetSection.style.transform = 'scale(1) translateY(0)';
                     targetSection.style.opacity = '1';
-                }, 50);
+                    if (targetSection.id === 'about') startSlideshow();
+                    if (targetSection.id === 'message') startMessageTyping(); // Start typing only when Message section is active
+                }, 180); // Match transition duration
             }, 350);
             
             // Update navigation
@@ -302,25 +379,98 @@
             });
         });
 
-        // Auto-slideshow functionality
-        let currentSlide = 0;
-        const slides = document.querySelectorAll('.slide');
-        const totalSlides = slides.length;
-
-        function showSlide(index) {
-            slides.forEach(slide => slide.classList.remove('active'));
-            slides[index].classList.add('active');
+        // Typing animation for message as subtitle sentences
+        const messageSentences = [
+            "Hi anne, anneeii, soy, hyacinth, hya, hyanne, etc. shessh dami mo nickname.",
+            "Anyways HAPPY BIRTHDAY, youre to old na anne 24 naka 😭.",
+            "I know we may communicate less and I know unsa ta ka different, but still I am grateful na nakilaya tika.",
+            "Like your one of the reasons kon unsa na ako karon.",
+            "You may have been through a lot for the past few years and now anne laban gihapon, I wanted you to know that I admire you for how much progress you're making sa life for becoming the best version of yourself.",
+            "I'm here always rooting and praying for your success and happiness.",
+            "If you feel unloved, don't forget naa si god ug shempre ako not just as a friend kabalo naka ana.",
+            "Yeah red flag ako tung nakilaya ko nimo, I know that.",
+            "And I dont know unsay imo pananaw sako karon, but still grateful na consider nimo ko as a friend.",
+            "And remember I've said na I accept the challenge, to reach your standards and if we meet somehow niya single ta both I will gladly grab that opportunity.",
+            "I'm leaving it to god, if god planned us to be together and if not ako parin ang imo biggest fan and I'll cheer for you but silently.",
+            "It may not be me, but still I will not take back what I said that I admire you.",
+            "Currently I am just waiting and developing myself for me to deserve you.",
+            "You may hold your walls high but over that wall there is someone waiting for the walls to go down.",
+            "Ikaw ang budoyon na ako nakilaya and I don't even know why I called you that hahaha nag make up names ra laong.",
+            "Woy Sorry sa mga sala nako sa imo if naa paman galing.",
+            "Sorry kase there are times na bubu ako. Like literally na naay time bubu jod ko hehe.",
+            "Pero what if mag ka trip ako to Canada, di natin knows hahaha.",
+            "Time will tell and if god let me. Hoping we'll meet again anne single or not.",
+            "Saon taman di mo pa kasi ako ni rereject ehh jk hahahaha.",
+            "Remember, always take care of yourself, because there are others that care, isa na ako didto.",
+            "You are always in my prayers, for god to guide you, find your happiness, give you endurance and patience sa imo journey sa imo life, and also imo health in general."
+        ];
+        const messageElem = document.getElementById("messageTyping");
+        let sentenceIndex = 0;
+        function typeSentence(sentence, callback) {
+            let charIndex = 0;
+            messageElem.textContent = "";
+            function typeChar() {
+                if (charIndex <= sentence.length) {
+                    messageElem.textContent = sentence.slice(0, charIndex);
+                    charIndex++;
+                    setTimeout(typeChar, 55); // Slow typing
+                } else {
+                    setTimeout(() => {
+                        messageElem.textContent = ""; // Remove sentence after pause
+                        setTimeout(callback, 600); // Pause before next sentence
+                    }, 3000); // Show full sentence for 1.8s
+                }
+            }
+            typeChar();
+        }
+        function showNextSentence() {
+            if (sentenceIndex < messageSentences.length) {
+                typeSentence(messageSentences[sentenceIndex], () => {
+                    sentenceIndex++;
+                    showNextSentence();
+                });
+            } else {
+                // After last sentence, show the flower
+                showFlower();
+            }
         }
 
-        function nextSlide() {
-            currentSlide = (currentSlide + 1) % totalSlides;
-            showSlide(currentSlide);
+        function showFlower() {
+            // Create an iframe to embed the flower animation
+            const flowerFrame = document.createElement('iframe');
+            flowerFrame.src = 'flower.html';
+            flowerFrame.style.width = '220px';
+            flowerFrame.style.height = '250px';
+            flowerFrame.style.border = 'none';
+            flowerFrame.style.display = 'block';
+            flowerFrame.style.margin = '0px auto 150px auto';
+            flowerFrame.style.transform = 'scale(2.2)'; // Zoom in // Keep zoom centered
+            flowerFrame.setAttribute('title', 'Blooming Tulip');
+            // Insert after the messageTyping element
+            messageElem.parentNode.insertBefore(flowerFrame, messageElem.nextSibling);
         }
 
-        // Start auto-slideshow
-        if (slides.length > 0) {
-            setInterval(nextSlide, 3000);
+        function startMessageTyping() {
+            sentenceIndex = 0;
+            setTimeout(showNextSentence, 2000); // Wait 2 seconds before starting
         }
+    </script>
+    <!-- Background music -->
+    <audio id="bgMusic" src="Music/videoplayback.m4a" loop autoplay style="display:none"></audio>
+    <script>
+        // Play music on load
+        window.addEventListener('DOMContentLoaded', function() {
+            const music = document.getElementById('bgMusic');
+            // Try to play (some browsers require user interaction)
+            music.volume = 0.5;
+            music.play().catch(() => {
+                // If autoplay fails, play after first user interaction
+                document.body.addEventListener('click', function playOnce() {
+                    music.play();
+                    document.body.removeEventListener('click', playOnce);
+                });
+            });
+        });
     </script>
 </body>
 </html>

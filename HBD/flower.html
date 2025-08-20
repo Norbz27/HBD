@@ -20,7 +20,7 @@
     }
     
     body{
-        background-image:var(--color-bg);
+        
         min-height: 100vh;
         display: flex;
         justify-content: center;
@@ -188,10 +188,10 @@
         transform: translateX(-50%) rotate(-15deg);
     }
     .flower__leaf--3{
-        transform: translateX(-50%) rotate(-30deg);
+        transform: translateX(-50%) rotate(-20deg);
     }
     .flower__leaf--4{
-        transform: translateX(-50%) rotate(-40deg);
+        transform: translateX(-50%) rotate(-30deg);
     }
     
     .flower__leaf--5{
@@ -199,39 +199,48 @@
     }
     
     .flower__leaf--6{
-        transform: translateX(-50%) rotate(30deg);
+        transform: translateX(-50%) rotate(20deg);
     }
     
     .flower__leaf--7{
-        transform: translateX(-50%) rotate(45deg);
+        transform: translateX(-50%) rotate(30deg);
     }
     
     .leaf {
         position: absolute;
-        bottom: 30vmin;
-        width: 8.33vmin;
-        height: 16.67vmin;
-        background-color: #228b22;
-        border-radius: 50%; 
-        transform: rotate(0deg);
+        bottom: 0;
+        left: 50%;
+        width: 14vmin;
+        height: 38vmin;
+        background: linear-gradient(to bottom, #228b22 60%, #6bbf59 100%);
+        border-radius: 0 100% 0 100% / 0 100% 0 100%;
+        transform: translateX(-50%) rotate(-18deg) skewX(-12deg);
         opacity: 0;
+        /* Make the leaf base point to the stem */
+        clip-path: polygon(0% 0%, 100% 0%, 100% 50%, 50% 70%, 0% 70%);
+        animation: appear 1s forwards 2s;
+        transition: opacity 1s ease;
     }
 
     .leaf.left {
-        left: calc(50% - 45px);
-        transform: rotate(-30deg);
-        animation: appear 5s forwards 2s;
+        left: 38%;
+        width: 10vmin;
+        transform: translateX(-50%) rotate(-36deg) skewX(-14deg);
+        animation-delay: 2s;
     }
     .leaf.right {
-        left: calc(50% - 5px);
-        transform: rotate(30deg);
-        animation: appear 5s forwards 2.5s;
+        left: 62%;
+        width: 10vmin;
+        transform: translateX(-50%) rotate(36deg) scaleX(-1) skewX(-14deg);
+        animation-delay: 2.5s;
     }
     
     @keyframes appear {
-                from { opacity: 0; }
-                to { opacity: 1; }
-            }
+        0% { opacity: 0; }
+        80% { opacity: 0; }
+        100% { opacity: 0.85; }
+    }
+    
     @keyframes grow {
                 from { height: 0; }
                 to { height: 56vmin;; }
